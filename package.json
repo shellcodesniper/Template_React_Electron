@@ -1,0 +1,123 @@
+{
+  "type": "module",
+  "name": "name",
+  "version": "0.0.1",
+  "productName": "name",
+  "description": "description",
+  "copyright": "Using Template_React_Electron by shellcodesniper",
+  "repository": {
+    "type": "git",
+    "url": "깃주소 https://github.com/shellcodesniper/Template_React_Electron.git"
+  },
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "binary-extensions": "^2.0.0",
+    "electron-debug": "^3.0.1",
+    "electron-is-dev": "^1.2.0",
+    "electron-json-storage": "^4.1.8",
+    "electron-store": "^5.1.1",
+    "electron-updater": "^4.0.4",
+    "electron-winstaller": "^4.0.0",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.0.0",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.1",
+    "squirrel": "^1.0.0",
+    "update-electron-app": "^1.5.0"
+  },
+  "main": "public/electron.js",
+  "author": "Captain Electron",
+  "homepage": "./",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "electron-publish": "npm version patch --no-git-tag-version;yarn build;GH_TOKEN=$GH_TOKEN electron-builder -p always;GH_TOKEN=$GH_TOKEN electron-builder -p always --win --ia32",
+    "electron-major": "yarn build;GH_TOKEN=$GH_TOKEN electron-builder -p always;GH_TOKEN=$GH_TOKEN electron-builder -p always --win --ia32",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron-start": "electron .",
+    "electron-dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-pack": "electron-builder",
+    "electron-pack:win32": "electron-builder --win --ia32 ",
+    "preelectron-pack": "yarn build",
+    "preelectron-pack:win32": "yarn build"
+  },
+  "eslintConfig": {
+    "extends": "react-app",
+    "rules": {
+      "import/no-webpack-loader-syntax": 0
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "build": {
+    "appId": "com.kuuwange.Template_React_Electron",
+    "artifactName": "bitBot.${ext}",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "shellcodesniper",
+        "repo": "Template_React_Electron"
+      }
+    ],
+    "mac": {
+      "icon": "build/assets/icons/icon.icns",
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "win": {
+      "icon": "build/assets/icons/icon.ico",
+      "publish": [
+        "github"
+      ],
+      "target": "nsis"
+    },
+    "files": [
+      "build/**/*",
+      "node_modules/**/*",
+      "public/assets/*"
+    ],
+    "extraResources": [
+      {
+        "from": "./public/assets/drivers",
+        "to": "drivers",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-root-import": "^6.5.0",
+    "concurrently": "^5.1.0",
+    "cross-env": "^7.0.2",
+    "electron": "^8.2.2",
+    "electron-builder": "^22.4.1",
+    "svg-react-loader": "^0.4.6",
+    "wait-on": "^4.0.2"
+  }
+}
