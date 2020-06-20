@@ -4,8 +4,13 @@ const {
   dialog,
   ipcMain
 } = require("electron");
+const {
+  autoUpdater
+} = require("electron-updater");
 const isDev = require("electron-is-dev");
 const path = require('path')
+
+require("electron-debug")();
 const electronInstaller = require('electron-winstaller');
 
 require("electron-debug")();
@@ -16,8 +21,8 @@ var mainWindow;
 function createWindow() {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 900,
+    width: 1400,
+    height: 800,
     center: true,
     resizable: true,
     webPreferences: {
@@ -42,13 +47,15 @@ function createWindow() {
     // ! 개발모드가 아닐경우 메뉴를 지워버림
   }
 
+
+
   mainWindow.on('closed', () => {
     app.quit();
   });
 
 }
 
-
+require("./autoupdater")(mainWindow);
 
 
 
@@ -67,7 +74,7 @@ app.whenReady().then(createWindow)
 console.log(`The temp path is: ${app.getAppPath("temp")}`)
 
 /* Event handler for asynchronous incoming messages */
-// require('./src/ipcmain')
+require('./src/ipcmain')
 
 console.log("Load ipcMain Done.");
 // ipcMain 에 들어가는 소스들은 ./src/ipcmain.js 에 정의되어있음

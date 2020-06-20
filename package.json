@@ -2,15 +2,16 @@
   "type": "module",
   "name": "name",
   "version": "0.0.1",
-  "productName": "name",
-  "description": "description",
-  "copyright": "Using Template_React_Electron by shellcodesniper",
+  "productName": "Hit The Bot",
+  "description": "자동거래",
+  "copyright": "Coded By. shellcodesniper@gmail.com / 김도균 / shellcodesniper",
   "repository": {
     "type": "git",
-    "url": "깃주소 https://github.com/shellcodesniper/Template_React_Electron.git"
+    "url": "https://github.com/shellcodesniper/REPO_NAME.git"
   },
   "private": true,
   "dependencies": {
+    "@babel/helper-call-delegate": "^7.10.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -25,19 +26,27 @@
     "react-bootstrap": "^1.0.0",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
-    "react-router-dom": "^5.1.2",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "react-split-pane": "^0.1.91",
+    "request": "^2.88.2",
+    "request-promise-native": "^1.0.8",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.88.2",
+    "socket.io": "^2.3.0",
     "squirrel": "^1.0.0",
     "update-electron-app": "^1.5.0"
   },
   "main": "public/electron.js",
-  "author": "Captain Electron",
+  "author": "KUUWANGE",
   "homepage": "./",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "electron-publish": "npm version patch --no-git-tag-version;yarn build;GH_TOKEN=$GH_TOKEN electron-builder -p always;GH_TOKEN=$GH_TOKEN electron-builder -p always --win --ia32",
-    "electron-major": "yarn build;GH_TOKEN=$GH_TOKEN electron-builder -p always;GH_TOKEN=$GH_TOKEN electron-builder -p always --win --ia32",
+    "electron-publish": "yarn build;GH_TOKEN=$GH_TOKEN electron-builder -p always;GH_TOKEN=$GH_TOKEN electron-builder -p always --win --ia32",
+    "electron-major": "npm version major --no-git-tag-version;yarn electron-publish",
+    "electron-minor": "npm version minor --no-git-tag-version;yarn electron-publish",
+    "electron-patch": "npm version patch --no-git-tag-version;yarn electron-publish",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "electron-start": "electron .",
@@ -66,13 +75,13 @@
     ]
   },
   "build": {
-    "appId": "com.kuuwange.Template_React_Electron",
-    "artifactName": "bitBot.${ext}",
+    "appId": "com.kuuwange.hithebot",
+    "artifactName": "hithebot.${ext}",
     "publish": [
       {
         "provider": "github",
         "owner": "shellcodesniper",
-        "repo": "Template_React_Electron"
+        "repo": "REPO_NAME"
       }
     ],
     "mac": {

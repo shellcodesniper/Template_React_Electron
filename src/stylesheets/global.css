@@ -7,6 +7,29 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html, body {
+  height: 100%;
+}
+
+.divider {
+  height: 100% !important;
+}
+
+.dividerLeft {
+  padding-right: 0.2rem;
+}
+
+.dividerRight {
+  padding-left: 0.2rem;
+}
+
+.Pane2 {
+  overflow: auto;
+}
+
+.SplitPane {
+  height: 93% !important;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

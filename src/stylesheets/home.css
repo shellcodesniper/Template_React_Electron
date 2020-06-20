@@ -1,0 +1,11 @@
+.priceBox {
+  max-width: 1120px !important;
+}
+
+.seperator {
+  height: 3rem;
+}
+
+.tooLarge {
+  font-size: 3rem !important;
+}
