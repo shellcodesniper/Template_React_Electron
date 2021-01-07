@@ -3,17 +3,6 @@ import React, {
   useEffect,
   useRef
 } from 'react'
-import {
-  Accordion,
-  Statistic,
-  Container,
-  Card,
-  Divider,
-  Header,
-  Icon,
-  Table,
-  Responsive
-} from "semantic-ui-react";
 
 import ApiUtil from "utils/api"
 

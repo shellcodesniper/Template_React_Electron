@@ -55,7 +55,8 @@ function createWindow() {
 
 }
 
-require("./autoupdater")(mainWindow);
+// ! autoUpdate 할경우. 활성화
+// require("./autoupdater")(mainWindow);
 
 
 

@@ -2,5 +2,7 @@ const {
   ipcMain
 } = require('electron')
 
-// require('./api/bithumb');
-// ! ipc에서 읽어들이기
+
+ipcMain.on('ipc_request_name', (event, data) => {
+  event.sender.send('ipc_response_name', data);
+});

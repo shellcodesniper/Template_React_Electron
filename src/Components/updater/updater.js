@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { Grid, Progress } from "semantic-ui-react";
-
 const { ipcRenderer } = window;
 
 class Updater extends React.Component {
@@ -44,17 +42,18 @@ class Updater extends React.Component {
   render() {
     // const isScrapping = this.state.scrapMode;
     return (
-      <Grid>
-        {/* <h1>{this.state.percentage}</h1> */}
-        <Grid.Row>
-          <Grid.Column>
-            <h3>{parseFloat(this.state.percentage) === 100 ? "업데이트 완료! 확인 버튼을 눌러 창을 닫아주세요" : "업데이트 중..."}</h3>
-            <Progress indicating percent={parseFloat(this.state.percentage)} progress />
-            <div className="col-2 mx-0 px-0 float-right mt-3">
-            </div>
-          </Grid.Column>
-        </Grid.Row>ㅇ
-      </Grid>
+      <div></div>
+      // <Grid>
+      //   {/* <h1>{this.state.percentage}</h1> */}
+      //   <Grid.Row>
+      //     <Grid.Column>
+      //       <h3>{parseFloat(this.state.percentage) === 100 ? "업데이트 완료! 확인 버튼을 눌러 창을 닫아주세요" : "업데이트 중..."}</h3>
+      //       <Progress indicating percent={parseFloat(this.state.percentage)} progress />
+      //       <div className="col-2 mx-0 px-0 float-right mt-3">
+      //       </div>
+      //     </Grid.Column>
+      //   </Grid.Row>ㅇ
+      // </Grid>
     );
   };
 }

@@ -1,7 +1,6 @@
 import React from 'react';
-import 'stylesheets/App.css';
+import 'stylesheets/App.scss';
 import Routes from "./Routes"
-import 'semantic-ui-css/semantic.min.css'
 
 class App extends React.Component {
   render() {
